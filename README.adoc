@@ -1,0 +1,19 @@
+== SuccuBotServer
+A reverse-engineered replacement backend for the Lefant M1 robot vacuum, designed to work in tandem with a local MQTT server to replace the Tuya/Lefant backend completely
+Contains an API for use by the companion app
+
+== Requirements
+* A hacked Lefant M1 robot vacuum with the encryption keys dumped and SSL certificate checks patched out (Instructions tbd)
+* An MQTT server. The MQTT server, SuccuBotServer, and the robot must all be on the same LAN
+* A CA to generate an SSL certificate for your MQTT server - the robot will request its certificate as part of the setup process
+* A reverse proxy like Nginx to make the API accessible via the internet
+
+== Features
+* LDAP authentication for multiple user households
+* Full server management and setup APIs, consumed by the companion app
+* SQLite or PostgreSQL database support
+* Storage of live maps and route information from the robot
+* Automatic robot discovery and pairing API, consumed by the companion app
+* Control of all essential robot functions and settings via API, consumed by the companion app
+* Full cloud replacement, so the robot never ever phones home again
+* Support for multiple robots
